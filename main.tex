@@ -1,0 +1,422 @@
+% !TEX program = XeLaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compact Academic CV
+% LaTeX Template
+% Version 1.0 (10/6/2012)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Dario Taraborelli (http://nitens.org/taraborelli/home)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important:
+% This template needs to be compiled using XeLaTeX
+%
+% Note: this template has the option to use the Hoefler Text font, see the
+% font configurations section below for instructions on using this font
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, a4paper]{article} % Document font size and paper size
+
+\usepackage{xstring}
+\usepackage{fontspec} % Allows the use of OpenType fonts
+
+\usepackage{geometry} % Allows the configuration of document margins
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in} % Document margin settings
+\setlength\parindent{0in} % Remove paragraph indentation
+
+\usepackage[usenames,dvipsnames]{xcolor} % Custom colors
+
+\usepackage{sectsty} % Allows changing the font options for sections in a document
+\usepackage[normalem]{ulem} % Custom underlining
+\usepackage{xunicode} % Allows generation of unicode characters from accented glyphs
+\defaultfontfeatures{Mapping=tex-text} % Converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+
+\usepackage{marginnote} % For margin years
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}} % New command for including margin years
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{15pt} % Slightly increase the distance of the margin years from the content (was 7pts)
+\reversemarginpar
+
+
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Albert Einstein - vita},pdfauthor={Albert Einstein}]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} % Link colors
+
+% Tweak to sort bib in reverse order
+\usepackage{etaremune}
+\makeatletter
+\long\def\thebibliography#1{%
+  \section*{\refname}%
+  \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}
+  \settowidth{\dimen0}{\@biblabel{#1}}%
+  \setlength{\dimen2}{\dimen0}%
+  \addtolength{\dimen2}{\labelsep}
+  \sloppy
+  \clubpenalty 4000 
+  \@clubpenalty 
+  \clubpenalty 
+  \widowpenalty 4000
+  \sfcode `\.\@m
+  \renewcommand{\labelenumi}{\@biblabel{\theenumi}} % labels like [3], [2], [1]
+  \begin{etaremune}[labelwidth=\dimen0,leftmargin=\dimen2]\@openbib@code
+}
+\def\endthebibliography{\end{etaremune}}
+\def\@bibitem#1{%
+  \item \if@filesw\immediate\write\@auxout{\string\bibcite{#1}{\the\value{enumi}}}\fi\ignorespaces
+}
+\makeatother
+
+
+
+%----------------------------------------------------------------------------------------
+%	FONT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% Two font choices are available in this template, the default is Linux Libertine, available for free at: http://www.linuxlibertine.org while the secondary choice is Hoefler Text which comes bundled with Mac OSX.
+% To use Hoefler Text, comment out the Linux Libertine block below and uncomment the Hoefler Text block. You will also need to replace the "\&" characters with "\amper{}" in section titles.
+
+% Linux Libertine Font (default)
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O} % Main text font
+%\setmonofont[Scale=0.8]{Monaco} % Set mono font (e.g. phone numbers)
+\sectionfont{\mdseries\upshape\Large} % Set font options for sections
+\subsectionfont{\mdseries\scshape\normalsize} % Set font options for subsections
+\subsubsectionfont{\mdseries\upshape\large} % Set font options for subsubsections
+\chardef\&="E050 % Custom ampersand character
+
+% Hoefler Text Font (bundled with Mac OSX)
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text} % Main text font
+%\setmonofont[Scale=0.8]{Monaco} % Set mono font (e.g. phone numbers)
+%\setsansfont[Scale=0.9]{Optima Regular} % Set sans font, used in the main name and titles in the document
+%\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}} % Custom ampersand character
+%\sectionfont{\sffamily\mdseries\large\underline} % Set font options for sections
+%\subsectionfont{\rmfamily\mdseries\scshape\normalsize} % Set font options for subsections
+%\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} % Set font options for subsubsections
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT AND GENERAL INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+{\LARGE Gregory Duveiller}\\[1cm] % Your name
+European Commission Joint Research Centre\\ % Your address
+Via E. Fermi, 2749, TP122, 100/1105\\
+Ispra, VA \texttt{21027}
+Italy\\[.2cm]
+Office Phone: \texttt{+39-0332-789161}\\
+Mobile Phone: \texttt{+39-334-2321-675}\\ % Your phone number
+Skype name: \texttt{gregory\_duveiller}\\[.2cm] % Your fax number
+Email: \href{mailto:gduveiller@gmail.com}{gduveiller@gmail.com}\\ % Your email address
+\textsc{url}: \href{https://www.researchgate.net/profile/Gregory_Duveiller}{https://www.researchgate.net/profile/Gregory\_Duveiller}\\ % Your academic/personal website
+
+\vspace{3cm}
+%\vfill % Whitespace between contact information and specific CV information
+
+%------------------------------------------------
+
+Born: August 24, 1982---Sucre, Bolivia\\ % Your date of birth
+Nationality: Belgian\\ % Your nationality
+% Mother tongue: French\\
+% Other language: English, Spanish, Italian and Portuguese
+%------------------------------------------------
+\section*{Areas of specialization}
+
+Remote Sensing; Vegetation productivity; Scale; Data-model inter-comparison; Land-use and land cover change; Biophysics. % Your primary areas of research interest
+%------------------------------------------------
+
+\section*{Current position}
+
+\years{04/2015-present} \emph{Scientific Project Officer}, in the Land Use Land Use Change and Forestry (LULUCF) group of the European Commission Joint Research Centre (JRC), Sustainable Resources Directorate, Bio-economy Unit.  % Your current or previous employment position
+\begin{itemize}
+\item Work consists in developing data-driven diagnostics and data-model inter-comparisons to evaluate the impacts of biogeophysical and biogeochemical effects of land use change within the framework of the FP7 project LUC4C (\href{http://luc4c.eu/}{http://luc4c.eu/}).
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Previous appointments held}
+
+\years{02/2014-03/2015} Consultant for PIKSEL, detached at the JRC in the Climate Risk Management Unit, Institute for Environment and Sustainability, Ispra, Italy.
+\begin{itemize}
+\item Develop a methodology to downscale sun-induced chlorophyll fluorescence retrieved from satellite observations using a light-use efficiency approach and apply at global scale.
+\end{itemize}
+
+\years{02/2011-02/2014} Post-doctoral grantholder researcher at the JRC, Monitoring Agricultural Resources (MARS) Unit, Institute for Environment and Sustainability, Ispra, Italy. 
+\begin{itemize}
+\item Operational crop monitoring and yield forecasting using the MARS Crop Yield Forecasting System (MCYFS) for selected countries in Europe to contribute actively to the MARS Bulletins, which serve for decision-making and policy support of the European Commission DG-AGRI.
+\item Improving the MCYFS by exploring new methods to use remote sensing for crop monitoring, including advanced use of MODIS data and developing strategic foresight on upcoming instruments (Sentinels, Proba-V).
+\item Contributing to impact studies of climate change on European agriculture (namely AVEMAC project) by using crop growth modelling and future climate data from regionally downscaled global circulation models.
+\item Contribution to the EUROCLIMA project in which MARS assures technology transfer of modelling tools to Latin America.
+\item Contribution to the GLOBCAST project in which the feasibility of extending the current MARS crop yield forecasting system to the global scale is explored.
+\end{itemize}
+
+\years{01/2006-01/2011} Researcher at the Earth and Life Institute, Universite catholique de Louvain (UCL), Louvain-la-Neuve, Belgium
+\begin{itemize}
+\item MOCCCASIN project, a collaborative project which focuses on improving the monitoring of winter-wheat and forecasting of winter-wheat yield in Russia by combining modelling techniques with satellite data assimilation.
+\item Realizing a PhD addressing some of the methological gaps between state-of-the-art remote sensing techniques and operational crop monitoring.
+\item Contributing actively in GLOBAM, a 4-yr project financed by the Belgian Scientific Policy Office (BELSPO) under the STEREO2 programme (SR/00/101). GLOBAM had the same scope as the PhD thesis but brought together partners from different research institutions with complementary expertise.
+\item Make a research study on tropical deforestation requested by JRC (Contract Nr. IES.B381471) to design and implement an automatic method to detect deforestation from systematic sampling of remote sensing imagery extracts across the Congo Basin.
+\end{itemize}
+\years{09/2005-12/2005} Traineeship at the Mountain Institute, Kathmandu, Nepal
+\begin{itemize}
+\item Within the hosting NGO, I became part of a task force gathering information to establish the Sacred Himalayan Landscape, a trans-boundary conservation area located mostly in Nepal. Part of the objective was to integrate local cultural habits and religious beliefs in the management of protected natural areas in the Himalayas.
+\end{itemize}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Education}
+\years{\raggedleft2011}\textsc{PhD} in Agronomical Sciences and Biological Engineering, UCL Belgium\\
+\textsc{PhD} thesis dissertation title: \textit{Crop specific green area index retrieval from multi-scale remote sensing for agricultural monitoring}\\
+Supervisor: Pierre Defourny\\
+\textsc{url}: \url{http://hdl.handle.net/2078.1/69200}\\
+
+\years{\raggedleft2005}\textsc{MSc} in Bioengineering with specialization in Forestry, \textit{magna cum laude}, UCL Belgium\\
+\textsc{MSc} thesis dissertation title: \textit{``Caractérisation spatiale et temporelle d'une partie du Parc National des Virunga par télédétection aéroportée (1959) et satellitaire (2004) pour évaluer le rôle de tampon de sa zone limitrophe''}\\
+Supervisor: Pierre Defourny\\
+
+%----------------------------------------------------------------------------------------
+%	GRANTS, HONORS AND AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Grants, honors \& awards}
+
+\years{\raggedleft2016} JRC award for scientific excellence\\
+
+\years{\raggedleft2015} Research proposal AGBIO awarded to perform exploratory research within the JRC. The objective of this 2-year internal JRC project is investigating the feasibility of an innovative data-driven model, based on satellite Earth Observation to monitor Net Primary Production (NPP) for a quantitative assessment of crops and grasslands production.\\
+
+\years{\raggedleft2011} Bourse de recherche FSR-FNRS, Belgium. Prestigious 4-year grant awarded for conducting a PhD research in Belgium.
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS AND TALKS SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Publications \& talks}
+
+\subsection*{Journal articles}
+
+\def\FormatName#1{%
+  \IfSubStr{#1}{Duveiller}{\textbf{#1}}{#1}%
+}
+
+%\nocite{Obsomer2013,Mayaux2006,Languy2006}
+%\nocite{Hoefsloot2012,Donatelli2012b}
+
+\nocite{Duveiller2016a,Duveiller2016,Durgun2016,Duveiller2015,Lopez-Lozano2015,Donatelli2015,Duveiller2015a,Low2015,Low2014,Duveiller2013a,Duveiller2013,Sepulcre-Canto2013,Duveiller2012,DeWit2012,Kouadio2012a,Kouadio2012,Curnel2011,Duveiller2011b,Duveiller2011a,Duveiller2010,Duveiller2008}
+
+
+\begingroup
+\renewcommand{\section}[2]{}%
+\bibliographystyle{elsarticle-num-tweak}
+\bibliography{biblio}
+\endgroup
+
+%------------------------------------------------
+
+\subsection*{Book chapters}
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Obsomer2013}
+\FormatName{V.~Obsomer}, \FormatName{N.~Titeux}, \FormatName{C.~Vancutsem},
+  \FormatName{G.~Duveiller}, \FormatName{J.-F. Pekel}, \FormatName{S.~Connor},
+  \FormatName{P.~Ceccato}, \FormatName{M.~Coosemans},
+  \href{http://www.intechopen.com/books/anopheles-mosquitoes-new-insights-into-malaria-vectors/from-anopheles-to-spatial-surveillance-a-roadmap-through-a-multidisciplinary-challenge}{{From
+  Anopheles to Spatial Surveillance: A Roadmap Through a Multidisciplinary
+  Challenge}}, in: \FormatName{S.~Manguin} (Ed.), Anopheles mosquitoes - New
+  insights into malaria vectors, InTech, 2013, Ch.~15, pp. 447--484.
+\newblock \href {http://www.intechopen.com/books/anopheles-mosquitoes-new-insights-into-malaria-vectors/from-anopheles-to-spatial-surveillance-a-roadmap-through-a-multidisciplinary-challenge}
+  {\path{doi:http://dx.doi.org/10.5772/55622}}.
+
+\bibitem{Mayaux2006}
+\FormatName{P.~Mayaux}, \FormatName{P.~Defourny}, \FormatName{D.~Devers},
+  \FormatName{M.~Hansen}, \FormatName{G.~Duveiller}, {Cartographie et
+  {\'{e}}volution du couvert forestier en Afrique centrale}, in: Les
+  For{\^{e}}ts du Bassin du Congo - Etat des For{\^{e}}ts, 2006, pp. 80--89.
+
+\bibitem{Languy2006}
+\FormatName{M.~Languy}, \FormatName{C.~de~Wasseige},
+  \FormatName{B.~Descl{\'{e}}e}, \FormatName{G.~Duveiller~Bogdan},
+  \FormatName{S.~Laime}, {Changements d'occupation du sol en
+  p{\'{e}}riph{\'{e}}rie du Parc National des Virunga}, in:
+  \FormatName{M.~Languy}, \FormatName{E.~de~Merode} (Eds.), Virunga. Survie du
+  premier parc d'Afrique, Lannoo, Tielt, Belgique, 2006, pp. 152--163.
+
+\end{thebibliography}
+\endgroup
+
+% \begingroup
+% \renewcommand{\section}[2]{}%
+% \begin{thebibliography}{10}
+% \expandafter\ifx\csname url\endcsname\relax
+%   \def\url#1{\texttt{#1}}\fi
+% \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+% \expandafter\ifx\csname href\endcsname\relax
+%   \def\href#1#2{#2} \def\path#1{#1}\fi
+
+% \bibitem{Obsomer2013}
+% \FormatName{V.~Obsomer}, \FormatName{N.~Titeux},\FormatName{C.~Vancutsem},\FormatName{G.~Duveiller}, \FormatName{J.-F~Pekel}, \FormatName{S.~Connor},\FormatName{P.~Ceccato}, \FormatName{M.~Coosemans},
+%   \href{http://www.sciencedirect.com/science/article/pii/S0034425716301936}{{From Anopheles to Spatial Surveillance: A Roadmap Through a Multidisciplinary Challenge, Anopheles mosquitoes}}, New insights into malaria vectors, Prof. Sylvie Manguin (Ed.), (2013), ISBN: 978-953-51-1188-7, InTech,
+% \newblock \href {http://www.intechopen.com/books/anopheles-mosquitoes-new-insights-into-malaria-vectors/from-anopheles-to-spatial-surveillance-a-roadmap-through-a-multidisciplinary-challenge}
+%   {\path{doi:10.5772/55622}}.
+% \end{thebibliography}
+% \endgroup
+
+
+\subsection*{Selected Reports}
+
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Hoefsloot2012}
+\FormatName{P.~Hoefsloot}, \FormatName{A.~Ines}, \FormatName{J.~V. Dam},
+  \FormatName{G.~Duveiller}, \FormatName{F.~Kayitakire},
+  \FormatName{J.~Hansen}, {Combining Crop Models and Remote Sensing for Yield
+  Prediction: Concepts, Applications and Challenges for Heterogeneous
+  Smallholder Environments}, Tech. rep., Luxembourg (2012).
+\newblock \href {http://dx.doi.org/10.2788/72447} {\path{doi:10.2788/72447}}.
+
+\bibitem{Donatelli2012b}
+\FormatName{M.~Donatelli}, \FormatName{G.~Duveiller},
+  \FormatName{D.~Fumagalli}, \FormatName{A.~Srivastava},
+  \FormatName{A.~Zucchini}, \FormatName{V.~Angileri},
+  \FormatName{D.~Fasbender}, \FormatName{P.~Loudjani}, \FormatName{S.~Kay},
+  \FormatName{V.~Juskevicius}, \FormatName{T.~Toth}, \FormatName{P.~Haastrup},
+  \FormatName{R.~M’barek}, \FormatName{M.~Espinosa}, \FormatName{P.~Ciaian},
+  \FormatName{S.~Niemeyer},
+  \href{http://mars.jrc.ec.europa.eu/mars/Projects/AVEMAC}{{Assessing
+  Agriculture Vulnerabilities for the design of Effective Measures for Adaption
+  to Climate Change (AVEMAC project)}}, Tech. rep., European Commission Joint
+  Research Centre (2012).
+\newblock \href {http://dx.doi.org/10.2788/16181} {\path{doi:10.2788/16181}}.
+
+\end{thebibliography}
+\endgroup
+
+
+\subsection*{Selected recent talks}
+
+\years{\raggedleft11/05/2016} Talk at \href{http://lps16.esa.int}{ESA living planet symposium}, Prague, entitled: \textit{Trading space for time: a methodology to quantify the biophysical and biogeochemical effects of land use change in absence of change}\\
+
+\years{\raggedleft18/10/2015} Invited talk at the \href{http://www.enea.it/it/comunicare-la-ricerca/events/agrospazio_18ott15/Programma_18ottobre_al12.10.2015cc.pdf}{agrospazio event:``Seminare nel futuro, raccogliere nel presente''} in the framework of EXPO2015, Milano.\\
+
+\years{\raggedleft27/07/2015} Talk at the International Geoscience and Remote Sensing Symposium (IGARSS), Milano, entitled: ``Exploring the potential of global remotely-sensed chlorophyll fluorescence downscaled at 0.05 degree spatial resolution for enhanced agricultural monitoring.'' \\
+
+\years{\raggedleft14/05/2015} Talk at the 36th International Symposium on Remote Sensing of Environment (ISRSE), Berlin, entitled: \textit{Quantifying biophysical effects of land use change at global scale with satellite Earth observations} \\
+
+\years{\raggedleft03/02/2014} \textbf{Keynote speech} at the \href{https://colloque6.inra.fr/gv2m/Oral-Sessions}{Global Vegetation Monitoring and Modeling conference}, Avignon, entitled: \textit{Perspectives for a more integrated use of satellite remote sensing in the MARS crop yield forecasting system} \\
+
+\years{\raggedleft11/12/2013} Talk at the American Geophysical Union Fall meeting, San Francisco, entitled: \textit{Identifying crop specific signals for global agricultural monitoring based on multi-angular MODIS reflectance time series}
+
+% Climate impacts conf?
+
+%------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	TEACHING SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Teaching}
+
+\years{\raggedleft2015} Lecturer at the \href{http://seom.esa.int/landtraining2015/page_home.php}{6th Advanced Training Course in Land Remote Sensing} summer school organized by the European Space Agency (ESA) in Bucarest, Romania. Material for both \href{http://seom.esa.int/landtraining2015/files/Day_4/D4T1b_LTC2015_Duveiller.pdf}{theoretical} and \href{http://seom.esa.int/landtraining2015/files/Day_4/D4P1b_LTC2015_Duveiller.pdf}{practical} sessions available online.\\
+
+\years{\raggedleft2013} Lecturer at the \href{https://earth.esa.int/web/guest/landtrainingcourse2013}{4th Advanced Training Course in Land Remote Sensing} summer school organized by the European Space Agency (ESA) in Athens, Greece. Video of the theoretical session available \href{http://www.esa.int/spaceinvideos/Videos/2013/07/Agriculture}{online}.\\
+
+\years{\raggedleft2013} Organisation of an international workshop held in March 2013 in Buenos Aires, Argentina, on crop modelling tools for the JRC in the framework of the EUROCLIMA project funded by EU DG-DEVCO\\
+
+\years{\raggedleft2006-2010} Organisation of seminars within my research group while working at UCL, Belgium.
+
+%------------------------------------------------
+
+\section*{Co-supervision or evaluation of PhD theses}
+
+\textbf{Alzira G. Ramos} - proposal submitted in July for PhD with \href{http://cerena.ist.utl.pt/}{CENECA}, Instituto Superior Técnico, Universidade de Lisboa, entitled: \textit{Modelling vegetation and soil spatial patterns over time for predicting land degradation in transition areas based on geostatistics.}\\
+
+\textbf{Sophia Walther} - ongoing thesis at Helmholtz-Centre Potsdam, GFZ German Research Centre, \href{http://www.gfz-potsdam.de/en/section/remote-sensing/topics/global-monitoring-of-vegetation-fluorescence-globfluo/}{GlobFluo group}. Tentative dissertation title : \textit{Exploiting remotely-sensed chlorophyll fluorescence data for the assessment of terrestrial vegetation dynamics and carbon cycle research}\\
+
+\textbf{Yetkin Ozum Durgun} - finishing a PhD at the \href{http://www.eed.ulg.ac.be/en/}{Universite de Liege}, Belgium. Tentative dissertation title: \textit{Advancing Agricultural Monitoring with Improved Yield Estimations Using SPOT VEGETATION Type Remotely Sensed Data}\\
+
+\textbf{Louise Leroux} - CIRAD \& Universite de Montpellier. Dissertation title: \textit{Moderate spatial resolution remote sensing for agricultural production dynamics monitoring in West Africa}
+
+
+
+%------------------------------------------------
+
+\section*{Service to the profession}
+
+Member of the Scientific committee for the ``Remote Sensing of Fluorescence, Photosynthesis and Vegetation Status'' conference that will be held on 17 - 19 January 2017 at ESA-ESRIN, Frascati, Italy. \href{http://www.flex2017.org/}{http://www.flex2017.org/}\\
+
+Reviewing for several journals including: \\
+Remote Sensing of Environment, Journal of Geophysical Research - Biogeosciences, IEEE Transactions on Geoscience and Remote Sensing, International Journal of Applied Earth Observation and Geoinformation, Geo:Geography and Environment, Scientific Reports and Journal of Plant Physiology.\\
+For more information see: \href{https://publons.com/author/1005902/gregory-duveiller#stats}{https://publons.com/author/1005902/gregory-duveiller}\\
+
+Member in a recruitment committee for a position of field technician at the \href{http://www.cra.wallonie.be/en}{Walloon Agricultural Research Center} (CRA-W).
+
+%----------------------------------------------------------------------------------------
+%	Personal skills SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Personal skills}
+
+\subsection*{Measurement equipment}
+Good command of GPS and instruments to measure plant canopy biophysical variables such as LAI (LAI-2000, Hemispherical Photography) acquired by realizing extensive field campaigns in the framework of PhD research.
+
+\subsection*{Computer skills}
+Programming: R, Matlab, some familiarity with python and C\#\\
+GIS: ESRI ArcMap, QGIS\\
+RS: ENVI\\
+Typesetting: \LaTeX, MS Word
+
+\subsection*{Languages}
+French - Native speaker\\
+English - Proficient user (C2)\\
+Spanish - Proficient user (C2)\\
+Italian - Proficient user (C1)\\
+Portuguese - Independent user (B2)
+
+\subsection*{Other skills and interests}
+- photography
+- gardening
+- trekking
+- cooking
+- drawing and painting
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+{\scriptsize Last updated: \today\- - \href{http://www.LaTeXTemplates.com}{http://www.LaTeXTemplates.com}} % Any final footer text such as a URL to the latest version of your CV, last updated date, compiled in XeTeX, etc
+\end{center}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
