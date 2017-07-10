@@ -31,7 +31,7 @@
 \usepackage{fontspec} % Allows the use of OpenType fonts
 
 \usepackage{geometry} % Allows the configuration of document margins
-\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in} % Document margin settings
+\geometry{a4paper, left=45mm, top=20mm,right=20mm,bottom=30mm} % Document margin settings
 \setlength\parindent{0in} % Remove paragraph indentation
 
 \usepackage[usenames,dvipsnames]{xcolor} % Custom colors
@@ -41,15 +41,35 @@
 \usepackage{xunicode} % Allows generation of unicode characters from accented glyphs
 \defaultfontfeatures{Mapping=tex-text} % Converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
 
+\usepackage{fullwidth}
+
+
+\usepackage{bbding}
+\usepackage{wasysym}
+\usepackage{fontspec}
+\newcommand*{\mobilePhone}{{\fontspec{symbola.ttf}\symbol{"1F4F1}}}
+\newcommand*{\clamshellMobilePhone}{{\fontspec{symbola.ttf}\symbol{"1F581}}}
+\newcommand*{\phoneA}{{\fontspec{code2000.ttf}\symbol{"260E}}}
+\newcommand*{\phoneB}{{\fontspec{symbola.ttf}\symbol{"260E}}}
+\newcommand*{\phoneC}{{\fontspec{quivira.otf}\symbol{"260E}}}
+\newcommand*{\phoneWhiteA}{{\fontspec{code2000.ttf}\symbol{"260F}}}
+\newcommand*{\phoneWhiteB}{{\fontspec{symbola.ttf}\symbol{"260F}}}
+\newcommand*{\phoneWhiteC}{{\fontspec{quivira.otf}\symbol{"260F}}}
+\newcommand*{\phoneReceiverA}{{\fontspec{symbola.ttf}\symbol{"1F4DE}}}
+\newcommand*{\phoneReceiverB}{{\fontspec{quivira.otf}\symbol{"1F4DE}}}
+\usepackage{fontawesome}
+\newcommand*\fanMobile{{\FA\symbol{"F10B}}}
+
+
+
 \usepackage{marginnote} % For margin years
-\newcommand{\years}[1]{\marginnote{\scriptsize #1}} % New command for including margin years
+\newcommand{\years}[1]{\marginnote{\footnotesize #1}} % New command for including margin years
 \renewcommand*{\raggedleftmarginnote}{}
 \setlength{\marginparsep}{15pt} % Slightly increase the distance of the margin years from the content (was 7pts)
 \reversemarginpar
 
 
-\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Albert Einstein - vita},pdfauthor={Albert Einstein}]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
-\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} % Link colors
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Francois Waldner - vita},pdfauthor={Franz Waldner}]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
 
 % Tweak to sort bib in reverse order
 \usepackage{etaremune}
@@ -76,6 +96,15 @@
 \makeatother
 
 
+\newcommand{\cvsection}[1]{
+  \par\addvspace{1.5ex}
+  \phantomsection{}
+  \sectionstyle{#1}
+  \color{gray}\vhrulefill{0.9pt}
+  \par\nobreak\addvspace{1ex}
+}
+
+\usepackage{changepage}
 
 %----------------------------------------------------------------------------------------
 %	FONT CONFIGURATIONS
@@ -101,6 +130,40 @@
 %\subsectionfont{\rmfamily\mdseries\scshape\normalsize} % Set font options for subsections
 %\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} % Set font options for subsubsections
 
+%-------------------------------------------------------------------------------
+%                Configuration for colors
+%-------------------------------------------------------------------------------
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+\colorlet{awesome}{awesome-red}
+
+\hypersetup{linkcolor=graytext,citecolor=graytext,filecolor=graytext,urlcolor=awesome} % Link colors
+
+
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -109,160 +172,252 @@
 %	CONTACT AND GENERAL INFORMATION SECTION
 %----------------------------------------------------------------------------------------
 
-{\LARGE Gregory Duveiller}\\[1cm] % Your name
-European Commission Joint Research Centre\\ % Your address
-Via E. Fermi, 2749, TP122, 100/1105\\
-Ispra, VA \texttt{21027}
-Italy\\[.2cm]
-Office Phone: \texttt{+39-0332-789161}\\
-Mobile Phone: \texttt{+39-334-2321-675}\\ % Your phone number
-Skype name: \texttt{gregory\_duveiller}\\[.2cm] % Your fax number
-Email: \href{mailto:gduveiller@gmail.com}{gduveiller@gmail.com}\\ % Your email address
-\textsc{url}: \href{https://www.researchgate.net/profile/Gregory_Duveiller}{https://www.researchgate.net/profile/Gregory\_Duveiller}\\ % Your academic/personal website
+\begin{adjustwidth}{-2.4cm}{2.4cm}
+\begin{minipage}[b]{1.17\textwidth}
+\centering
+\vspace{-0.5cm}
+\hspace{-0.4cm}\resizebox{0.71\linewidth}{!}{ François \textbf{WALDNER}} \\
+\vspace{0.2cm}
+{\large \color{awesome} \textsc{Bioengineer $\cdot$ Remote Sensing \& GIS Specialist $\cdot$ Data Scientist}}\\
+\end{minipage}% <---------------- Note the use of "%"
+\end{adjustwidth}
 
-\vspace{3cm}
-%\vfill % Whitespace between contact information and specific CV information
+\vspace{0.2cm}
+
+\begin{adjustwidth}{-2.4cm}{2.4cm}
+\begin{minipage}[b]{1.17\textwidth}
+\centering
+\small
+
+39 Rue Philippe Baucq, 1040 Brussels, Belgium\\
+%\phone ~ \texttt{+32-10-473680} | 
+\fanMobile ~  \texttt{+32-472-813539} | 
+\faSkype ~ \texttt{waldner.francois} | 
+ \href{mailto:francois.waldner@gmail.com}{francois.waldner@gmail.com} | 
+ORCiD: \texttt{0000-0002-5599-7456}
+\end{minipage}% <---------------- Note the use of "%"
+\end{adjustwidth}
+
+\vspace{0.2cm}
+
+\begin{adjustwidth}{-2.4cm}{2.4cm}
+\begin{minipage}[b]{1.17\textwidth}
+
+\small
+\color{graytext}
+Dr. Fran\c{c}ois Waldner is a remote sensing scientist with a research specialization in large-area crop mapping and monitoring. He has recently completed a PhD on yearly cropland mapping using high resolution satellite image time series. He also contributes to developing monitoring strategies of the locusts and grasshoppers habitats. He is driven by developing innovative techniques in line with the operational requirements of the application.  Recently, he won the Agriculture award of the Data For Development  challenge organized by Orange in collaboration with the MIT. He is also  involved in several Science policy groups and Open Science initiatives.
+\end{minipage}% <---------------- Note the use of "%"
+\end{adjustwidth}
+
+%\begin{minipage}[b]{.5\textwidth}
+%\raggedright
+%{\hspace{-2.4cm}\Huge François \textbf{WALDNER}}\\
+%\vspace{0.05cm}
+%\hspace{-2.4cm}{\Large Bioengineer}\\
+%\end{minipage}% <---------------- Note the use of "%"
+%\begin{minipage}[b]{.5\textwidth}
+%\raggedleft
+% Université catholique de Louvain\\ % Your address
+%Croix du Sud, \texttt{2} ‐ L7.05.16\\
+%\texttt{1348}, Louvain‐la‐Neuve\\
+%Belgium\\ 
+%\end{minipage}
+
+%\vspace{0.5cm}
+
+%\begin{minipage}[t]{.5\textwidth}
+%\raggedright
+%\hspace{-2.4cm}Born: September 16, 1989---Uccle, Belgium\\ % Your date of birth
+%\vspace{0.05cm}
+%\hspace{-2.4cm}Nationality: Belgian\\ % Your nationality
+%\end{minipage}% <---------------- Note the use of "%"
+%\begin{minipage}[t]{.5\textwidth}
+%\raggedleft
+%\phone ~ \texttt{+32-10-473680}\\
+%\fanMobile ~  \texttt{+32-472-813539}\\ % Your phone number
+%\faSkype ~ \texttt{waldner.francois}\\ % Your fax number
+%\Envelope ~ \href{mailto:francois.waldner@gmail.com}{francois.waldner@gmail.com}\\ % Your email address
+%Your academic/personal website
+%ORCID: \texttt{0000-0002-5599-7456}
+%\end{minipage}
+
 
 %------------------------------------------------
 
-Born: August 24, 1982---Sucre, Bolivia\\ % Your date of birth
-Nationality: Belgian\\ % Your nationality
+
 % Mother tongue: French\\
 % Other language: English, Spanish, Italian and Portuguese
 %------------------------------------------------
-\section*{Areas of specialization}
 
-Remote Sensing; Vegetation productivity; Scale; Data-model inter-comparison; Land-use and land cover change; Biophysics. % Your primary areas of research interest
-%------------------------------------------------
+\section*{\hspace{-2.4cm}{\color{awesome}P}rofessional experiences \hrulefill}
 
-\section*{Current position}
+\years{07/2012-present} \textbf{{Researcher}} at the Geomatics unit of the Earth and Life Institute--Environment, Université catholique de Louvain (UCL), Belgium.\\ \vspace{-0.6cm} % Your current or previous employment position
 
-\years{04/2015-present} \emph{Scientific Project Officer}, in the Land Use Land Use Change and Forestry (LULUCF) group of the European Commission Joint Research Centre (JRC), Sustainable Resources Directorate, Bio-economy Unit.  % Your current or previous employment position
-\begin{itemize}
-\item Work consists in developing data-driven diagnostics and data-model inter-comparisons to evaluate the impacts of biogeophysical and biogeochemical effects of land use change within the framework of the FP7 project LUC4C (\href{http://luc4c.eu/}{http://luc4c.eu/}).
-\end{itemize}
+{\footnotesize$\cdot$ Project manager and team leader in international research projects, writing research proposal, staff management.}\\ \vspace{-0.6cm}
 
+{\footnotesize$\cdot$ PhD thesis addressing some methodological gaps to achieve accurate yearly global cropland maps.}\\ \vspace{-0.6cm}
+
+{\footnotesize$\cdot$ Supervision of master theses and team work through collaborative research projects.}\\ \vspace{-0.6cm}
+
+{\footnotesize$\cdot$ Coordination of field data collection and reference data collection by crowdsourcing.}\\ \vspace{-0.6cm}
+
+{\footnotesize$\cdot$ Communications at several international conferences and workshops.}\\ \vspace{-0.6cm}
+
+{\footnotesize$\cdot$ Contribution to guidelines and best practices.}\\ \vspace{-0.3cm}
+
+
+\years{08/2016-present} \textbf{{Remote Sensing Consultant}} at MapTailor Geospatial Consulting GbR.\\ \vspace{-0.3cm} % Your current or previous employment position
+
+
+
+\years{10/2011-4/2012} \textbf{{Traineeship}} at UCL Geomatics, spatial integration of non-navigable streams datasets, Louvain-la-Neuve, Belgium.\\ \vspace{-0.3cm}
+
+\years{07/2011-09/2011} \textbf{{Internship}} at the National Center for Desert Locust Control, Nouakchott, Mauritania.\\ \vspace{-0.3cm}
+
+\years{07/2010} \textbf{{Traineeship}} at  UCL Geomatics, spatial integration of agro-environmental features, Louvain-la-Neuve, Belgium.
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Previous appointments held}
+\section*{\hspace{-2.4cm}{\color{awesome}R}esearch projects \hrulefill}
 
-\years{02/2014-03/2015} Consultant for PIKSEL, detached at the JRC in the Climate Risk Management Unit, Institute for Environment and Sustainability, Ispra, Italy.
-\begin{itemize}
-\item Develop a methodology to downscale sun-induced chlorophyll fluorescence retrieved from satellite observations using a light-use efficiency approach and apply at global scale.
-\end{itemize}
+\years{2016-2017} Development of a \href{http://geoagro.icarda.org/ca/}{near real-time agricultural monitoring system} at the field level in for the Fergana Valley, Central Asia  for the International Center for Agricultural Research in the Dry Areas (ICARDA).\\ \vspace{-0.3cm}
 
-\years{02/2011-02/2014} Post-doctoral grantholder researcher at the JRC, Monitoring Agricultural Resources (MARS) Unit, Institute for Environment and Sustainability, Ispra, Italy. 
-\begin{itemize}
-\item Operational crop monitoring and yield forecasting using the MARS Crop Yield Forecasting System (MCYFS) for selected countries in Europe to contribute actively to the MARS Bulletins, which serve for decision-making and policy support of the European Commission DG-AGRI.
-\item Improving the MCYFS by exploring new methods to use remote sensing for crop monitoring, including advanced use of MODIS data and developing strategic foresight on upcoming instruments (Sentinels, Proba-V).
-\item Contributing to impact studies of climate change on European agriculture (namely AVEMAC project) by using crop growth modelling and future climate data from regionally downscaled global circulation models.
-\item Contribution to the EUROCLIMA project in which MARS assures technology transfer of modelling tools to Latin America.
-\item Contribution to the GLOBCAST project in which the feasibility of extending the current MARS crop yield forecasting system to the global scale is explored.
-\end{itemize}
+\years{2014-2017} Cross--site projects for the \href{http://www.jecam.org/}{Joint Experiment on Crop Assessment and Monitoring}.\\ \vspace{-0.3cm}
 
-\years{01/2006-01/2011} Researcher at the Earth and Life Institute, Universite catholique de Louvain (UCL), Louvain-la-Neuve, Belgium
-\begin{itemize}
-\item MOCCCASIN project, a collaborative project which focuses on improving the monitoring of winter-wheat and forecasting of winter-wheat yield in Russia by combining modelling techniques with satellite data assimilation.
-\item Realizing a PhD addressing some of the methological gaps between state-of-the-art remote sensing techniques and operational crop monitoring.
-\item Contributing actively in GLOBAM, a 4-yr project financed by the Belgian Scientific Policy Office (BELSPO) under the STEREO2 programme (SR/00/101). GLOBAM had the same scope as the PhD thesis but brought together partners from different research institutions with complementary expertise.
-\item Make a research study on tropical deforestation requested by JRC (Contract Nr. IES.B381471) to design and implement an automatic method to detect deforestation from systematic sampling of remote sensing imagery extracts across the Congo Basin.
-\end{itemize}
-\years{09/2005-12/2005} Traineeship at the Mountain Institute, Kathmandu, Nepal
-\begin{itemize}
-\item Within the hosting NGO, I became part of a task force gathering information to establish the Sacred Himalayan Landscape, a trans-boundary conservation area located mostly in Nepal. Part of the objective was to integrate local cultural habits and religious beliefs in the management of protected natural areas in the Himalayas.
-\end{itemize}
+\years{07/2012-03/2017} Improved characterization of the cropland extent at local, continental and global scales in the EU-funded framework of the  \href{http://www.geoglam-sigma.info/Pages/default.aspx}{SIGMA} (Stimulating Innovation for the Global Monitoring of Agriculture) project.\\ \vspace{-0.3cm}
+
+\years{2015-2016} Benchmarking of cropland mapping algorithm in the framework of the ESA-funded Sentinel-2 for agriculture project.\\ \vspace{-0.3cm}
+
+\years{2012-2016}  Crop mapping and biophysical variable retrieval from multi-sensor and multi-scale satellite time series within the EU-funded IMAGINES (Implementation of Multi-scale Agricultural Indicators Exploiting Sentinels) project.\\ \vspace{-0.3cm}
+
+\years{2012-2013}  Improved  monitoring of winter wheat in Russia combining modelling techniques with satellite data assimilation and crop type mapping within the EU-funded MOCCCASIN (MOnitoring Crops in Continental Climates through Assimilation of Satellite INformation) project.\\ \vspace{-0.3cm}
+
+\years{2012} Update of the sector plan of Wallonia in light of tomorrow's sustainable development challenges.
+
+
+
+
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Education}
-\years{\raggedleft2011}\textsc{PhD} in Agronomical Sciences and Biological Engineering, UCL Belgium\\
-\textsc{PhD} thesis dissertation title: \textit{Crop specific green area index retrieval from multi-scale remote sensing for agricultural monitoring}\\
-Supervisor: Pierre Defourny\\
-\textsc{url}: \url{http://hdl.handle.net/2078.1/69200}\\
+\section*{\hspace{-2.4cm}{\color{awesome}E}ducation \hrulefill}
+\years{\raggedleft2012-05/2017}\textsc{PhD} in Bioscience engineering, UCL Belgium.\\
+{\small \textsc{PhD} thesis dissertation title: \textit{Yearly  cropland mapping over large areas with high resolution satellite image time series.} Supervisor: Pierre Defourny (UCL)}\\\vspace{-0.3cm}
 
-\years{\raggedleft2005}\textsc{MSc} in Bioengineering with specialization in Forestry, \textit{magna cum laude}, UCL Belgium\\
-\textsc{MSc} thesis dissertation title: \textit{``Caractérisation spatiale et temporelle d'une partie du Parc National des Virunga par télédétection aéroportée (1959) et satellitaire (2004) pour évaluer le rôle de tampon de sa zone limitrophe''}\\
-Supervisor: Pierre Defourny\\
+\years{\raggedleft 10/2010}\textsc{Athens Exchange program}, \textit{Magna cum laude}, Czech Technical University, Czech republic.\\
+{\small Digital signal and image processing with applications}\\\vspace{-0.3cm}
+
+
+\years{\raggedleft2007-2012}\textsc{MSc} in Bioengineering with a specialization in Environmental Sciences, \textit{Magna cum laude}, UCL Belgium.\\
+{\small \textsc{MSc} thesis dissertation title: \textit{Analysis of satellite image time series to monitor the habitat of the Desert Locust, \textit{Shistocerca gregaria}, Forskal, 1775 in Mauritania.}
+Supervisors: Pierre Defourny (UCL) and Keith Cressman (UN FAO-AGPM)}\\
+
+\vspace{-0.3cm}
+
 
 %----------------------------------------------------------------------------------------
 %	GRANTS, HONORS AND AWARDS SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Grants, honors \& awards}
+\section*{\hspace{-2.4cm}{\color{awesome}G}rants, honors \& awards \hrulefill}
 
-\years{\raggedleft2016} JRC award for scientific excellence\\
+\years{\raggedleft2017} \textbf{Best Poster Award} at the European Space Agency WorldCover 2017 Conference. \\\vspace{-0.3cm}
 
-\years{\raggedleft2015} Research proposal AGBIO awarded to perform exploratory research within the JRC. The objective of this 2-year internal JRC project is investigating the feasibility of an innovative data-driven model, based on satellite Earth Observation to monitor Net Primary Production (NPP) for a quantitative assessment of crops and grasslands production.\\
+\years{\raggedleft2016} \textbf{Agriculture Prize of Orange's 2016 Data for Development (\href{http://d4d.orange.com/content/download/43330/405662/version/3/file/D4Dchallenge_leaflet_A4_V2Eweblite.pdf}{D4D}) Challenge}: Genesis of millet prices in Senegal: the role of production, markets and their failures. \\\vspace{-0.3cm}
 
-\years{\raggedleft2011} Bourse de recherche FSR-FNRS, Belgium. Prestigious 4-year grant awarded for conducting a PhD research in Belgium.
+\years{\raggedleft2016} \textbf{Grant from the Bill and Melinda Gates Foundation} to carry on the research on the modelling the formation of millet prices in Senegal. \\\vspace{-0.3cm}
+
+\years{\raggedleft2012} \textbf{CERA award} for the best MSc thesis in the field of Environmental sciences.\\\vspace{-0.3cm}
+
+\years{\raggedleft2012} \textbf{AIALv award} for the development of AgroMOB --an integrated information system to highlight the network of the Faculty of Bioscience engineering.
+
+
+%----------------------------------------------------------------------------------------
+%	Personal skills SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{\hspace{-2.4cm}{\color{awesome}P}ersonal skills \hrulefill}
+
+
+
+\years{\raggedleft \textsc{Measurement equipment}} Good command of GPS and instruments to measure plant canopy biophysical variables such as LAI (Hemispherical Photography) during field data collection campaigns.\\\vspace{-0.3cm}
+
+\years{\raggedleft \textsc{Computer skills}} \textbf{Programming}: R, Matlab, python, some familiarity with C,  basic command of HTML, PHP, javascript and, mySQL. \\
+\textbf{Remote Sensing \& GIS}: ESRI ArcMap, QGIS, ENVI, eCognition\\
+\textbf{Typesetting}: \LaTeX, MS Word\\
+
+\vspace{-0.3cm} 
+
+
+\years{\raggedleft \textsc{Languages}} French: Native speaker | English: Proficient user (C2)  | Spanish: Independent user (B1)   | Dutch: Independent user (B1)
+
+
+
+
+\section*{\hspace{-2.4cm}{\color{awesome}E}xtracurricular activities \hrulefill}
+
+\subsection*{\hspace{-2.4cm}Activities}
+\vspace{-0.3cm}
+\years{\raggedleft2015-present} \textbf{Co-founder and blogger of} \href{www.guru-gis.net}{Guru-gis}, a blog on GIS and Remote Sensing data analysis with open source softwares. \\\vspace{-0.3cm}
+
+\years{\raggedleft2015-present} \textbf{Challenger} at the the NASA Space Apps Challenge (hackathon). Development of MappsAttack, a game app to enable crowd-sourcing of validation data for Land Cover maps. Most Inspiring Project Prize Winner of Liege’s Challenge. \\\vspace{-0.3cm}
+
+\years{\raggedleft2014-present} \textbf{Co-founder of PhDHub}, the Belgian Network for PhD Candidates and Early-Career researchers. \\\vspace{-0.5cm}
+
+\years{\raggedleft2014-present} \textbf{Effective member of Focus Research},  the Belgian Research Policy Group that plays an active advocacy role.  Publication of "The Research in Transition", a journal (20 000 copies) distributed in all the French-speaking universities of Belgium. \\\vspace{-0.3cm}
+
+
+\years{\raggedleft2014-2015} \textbf{Effective member of EURODOC}, the European Council of Doctoral Candidates and Junior Researchers, a federation of 32 national organisations of PhD candidates. Belgian delegate at the 2015 Assembly General Meeting. Member of the   Open Access Working Group. \\\vspace{-0.3cm}
+
+\years{\raggedleft2013-2015} \textbf{Effective member of the ACELI}, the  researchers' association of the Earth and Life Institute.\\\vspace{-0.3cm}
+
+
+\years{\raggedleft2014} \textbf{Startupper at Biowaste solution}.  Elected project at the BSE Academy, an entrepreneurial incubator training program organized and certified by Impulse Brussels.
+
+
+\subsection*{\hspace{-2.4cm}Other interests}
+--- photography
+- cycling
+- gardening
+- hiking
+- climbing
+- cooking ---
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS AND TALKS SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Publications \& talks}
 
-\subsection*{Journal articles}
+
+\section*{\hspace{-2.4cm}{\color{awesome}P}ublications \& talks \hrulefill}
+
+\subsection*{\hspace{-2.4cm}Journal articles}
 
 \def\FormatName#1{%
-  \IfSubStr{#1}{Duveiller}{\textbf{#1}}{#1}%
+  \IfSubStr{#1}{Waldner}{\textbf{#1}}{#1}%
 }
 
-%\nocite{Obsomer2013,Mayaux2006,Languy2006}
-%\nocite{Hoefsloot2012,Donatelli2012b}
 
-\nocite{Duveiller2016a,Duveiller2016,Durgun2016,Duveiller2015,Lopez-Lozano2015,Donatelli2015,Duveiller2015a,Low2015,Low2014,Duveiller2013a,Duveiller2013,Sepulcre-Canto2013,Duveiller2012,DeWit2012,Kouadio2012a,Kouadio2012,Curnel2011,Duveiller2011b,Duveiller2011a,Duveiller2010,Duveiller2008}
+\nocite{waldner2017defining, waldner2017smote,loew2017abandonment,loew2017fergana,jacques2017, low2016timely, bogaert2016information, radoux2016sentinel, waldner2016towards, lambert2016cropland, tennant2016academic, waldner2016unified, beriaux2015maize, li2015generic, matton2015automated, waldner2015operational, waldner2015automated, waldner2015land, waldner2015mapping, renier2015dynamic}
+
 
 
 \begingroup
 \renewcommand{\section}[2]{}%
 \bibliographystyle{elsarticle-num-tweak}
-\bibliography{biblio}
+\bibliography{bibliography}
 \endgroup
 
 %------------------------------------------------
 
-\subsection*{Book chapters}
-\begingroup
-\renewcommand{\section}[2]{}%
-\begin{thebibliography}{1}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\expandafter\ifx\csname href\endcsname\relax
-  \def\href#1#2{#2} \def\path#1{#1}\fi
+%\subsection*{Book chapters}
+%\begingroup
+%\renewcommand{\section}[2]{}%
 
-\bibitem{Obsomer2013}
-\FormatName{V.~Obsomer}, \FormatName{N.~Titeux}, \FormatName{C.~Vancutsem},
-  \FormatName{G.~Duveiller}, \FormatName{J.-F. Pekel}, \FormatName{S.~Connor},
-  \FormatName{P.~Ceccato}, \FormatName{M.~Coosemans},
-  \href{http://www.intechopen.com/books/anopheles-mosquitoes-new-insights-into-malaria-vectors/from-anopheles-to-spatial-surveillance-a-roadmap-through-a-multidisciplinary-challenge}{{From
-  Anopheles to Spatial Surveillance: A Roadmap Through a Multidisciplinary
-  Challenge}}, in: \FormatName{S.~Manguin} (Ed.), Anopheles mosquitoes - New
-  insights into malaria vectors, InTech, 2013, Ch.~15, pp. 447--484.
-\newblock \href {http://www.intechopen.com/books/anopheles-mosquitoes-new-insights-into-malaria-vectors/from-anopheles-to-spatial-surveillance-a-roadmap-through-a-multidisciplinary-challenge}
-  {\path{doi:http://dx.doi.org/10.5772/55622}}.
-
-\bibitem{Mayaux2006}
-\FormatName{P.~Mayaux}, \FormatName{P.~Defourny}, \FormatName{D.~Devers},
-  \FormatName{M.~Hansen}, \FormatName{G.~Duveiller}, {Cartographie et
-  {\'{e}}volution du couvert forestier en Afrique centrale}, in: Les
-  For{\^{e}}ts du Bassin du Congo - Etat des For{\^{e}}ts, 2006, pp. 80--89.
-
-\bibitem{Languy2006}
-\FormatName{M.~Languy}, \FormatName{C.~de~Wasseige},
-  \FormatName{B.~Descl{\'{e}}e}, \FormatName{G.~Duveiller~Bogdan},
-  \FormatName{S.~Laime}, {Changements d'occupation du sol en
-  p{\'{e}}riph{\'{e}}rie du Parc National des Virunga}, in:
-  \FormatName{M.~Languy}, \FormatName{E.~de~Merode} (Eds.), Virunga. Survie du
-  premier parc d'Afrique, Lannoo, Tielt, Belgique, 2006, pp. 152--163.
-
-\end{thebibliography}
-\endgroup
+%\endgroup
 
 % \begingroup
 % \renewcommand{\section}[2]{}%
@@ -282,58 +437,43 @@ Supervisor: Pierre Defourny\\
 % \endgroup
 
 
-\subsection*{Selected Reports}
+\subsection*{\hspace{-2.4cm}Selected Reports}
+
 
 \begingroup
 \renewcommand{\section}[2]{}%
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{Hoefsloot2012}
-\FormatName{P.~Hoefsloot}, \FormatName{A.~Ines}, \FormatName{J.~V. Dam},
-  \FormatName{G.~Duveiller}, \FormatName{F.~Kayitakire},
-  \FormatName{J.~Hansen}, {Combining Crop Models and Remote Sensing for Yield
-  Prediction: Concepts, Applications and Challenges for Heterogeneous
-  Smallholder Environments}, Tech. rep., Luxembourg (2012).
-\newblock \href {http://dx.doi.org/10.2788/72447} {\path{doi:10.2788/72447}}.
+\bibitem{jungers2015vers}
+\FormatName{Q.~Jungers}, \FormatName{A.~Leclercq},\FormatName{P.~Neri},\FormatName{J.~Radoux}, \FormatName{F.~Waldner}, \FormatName{P.~Defourny},
+  \href{http://dial.uclouvain.be/pr/boreal/object/boreal:160879}{{Vers un plan de secteur durable: l'offre en logement}},(2015), UCL, Rapport de la CPDT. 
+  
+  \bibitem{leclercq2015versb}
+\FormatName{A.~Leclercq},\FormatName{Q.~Jungers}, \FormatName{P.~Neri},\FormatName{J.~Radoux}, \FormatName{F.~Waldner}, \FormatName{P.~Defourny},
+  \href{http://dial.uclouvain.be/pr/boreal/object/boreal:160880}{{Vers un plan de secteur durable: indice de durabilit{\'e} r{\'e}sidentielle (analyse multi-crit{\`e}re)}},(2015), UCL, Rapport de la CPDT.
 
-\bibitem{Donatelli2012b}
-\FormatName{M.~Donatelli}, \FormatName{G.~Duveiller},
-  \FormatName{D.~Fumagalli}, \FormatName{A.~Srivastava},
-  \FormatName{A.~Zucchini}, \FormatName{V.~Angileri},
-  \FormatName{D.~Fasbender}, \FormatName{P.~Loudjani}, \FormatName{S.~Kay},
-  \FormatName{V.~Juskevicius}, \FormatName{T.~Toth}, \FormatName{P.~Haastrup},
-  \FormatName{R.~M’barek}, \FormatName{M.~Espinosa}, \FormatName{P.~Ciaian},
-  \FormatName{S.~Niemeyer},
-  \href{http://mars.jrc.ec.europa.eu/mars/Projects/AVEMAC}{{Assessing
-  Agriculture Vulnerabilities for the design of Effective Measures for Adaption
-  to Climate Change (AVEMAC project)}}, Tech. rep., European Commission Joint
-  Research Centre (2012).
-\newblock \href {http://dx.doi.org/10.2788/16181} {\path{doi:10.2788/16181}}.
+  \bibitem{leclercq2015versa}
+\FormatName{A.~Leclercq},\FormatName{Q.~Jungers}, \FormatName{P.~Neri},\FormatName{J.~Radoux}, \FormatName{F.~Waldner}, \FormatName{P.~Defourny},
+  \href{http://dial.uclouvain.be/pr/boreal/object/boreal:158871}{{Vers un plan de secteur durable: m{\'e}thodologie du mod{\`e}le}},(2015), UCL, Rapport de la CPDT.
 
+
+  
 \end{thebibliography}
 \endgroup
 
 
-\subsection*{Selected recent talks}
+\subsection*{\hspace{-2.4cm}Selected recent talks}
 
-\years{\raggedleft11/05/2016} Talk at \href{http://lps16.esa.int}{ESA living planet symposium}, Prague, entitled: \textit{Trading space for time: a methodology to quantify the biophysical and biogeochemical effects of land use change in absence of change}\\
+\years{\raggedleft21/04/2016} Invited talk entitled \textit{Advances in EO Technologies for Agricultural Monitoring} at Monitoring Food Security Threats from Space, a Crop Estimation Liaison Committee Seminar on Technologies for Quantitative Crop Estimates and Condition Reporting in Agriculture, Pretoria, South Africa.\\
 
-\years{\raggedleft18/10/2015} Invited talk at the \href{http://www.enea.it/it/comunicare-la-ricerca/events/agrospazio_18ott15/Programma_18ottobre_al12.10.2015cc.pdf}{agrospazio event:``Seminare nel futuro, raccogliere nel presente''} in the framework of EXPO2015, Milano.\\
+\years{\raggedleft05/02/2014} Talk at the \href{https://colloque6.inra.fr/gv2m/Oral-Sessions}{Global Vegetation Monitoring and Modeling conference}, Avignon, entitled: \textit{Towards the exploitation of Sentinel-1, -2 and -3 for high resolution crop mapping along the growing season.} \\
 
-\years{\raggedleft27/07/2015} Talk at the International Geoscience and Remote Sensing Symposium (IGARSS), Milano, entitled: ``Exploring the potential of global remotely-sensed chlorophyll fluorescence downscaled at 0.05 degree spatial resolution for enhanced agricultural monitoring.'' \\
 
-\years{\raggedleft14/05/2015} Talk at the 36th International Symposium on Remote Sensing of Environment (ISRSE), Berlin, entitled: \textit{Quantifying biophysical effects of land use change at global scale with satellite Earth observations} \\
-
-\years{\raggedleft03/02/2014} \textbf{Keynote speech} at the \href{https://colloque6.inra.fr/gv2m/Oral-Sessions}{Global Vegetation Monitoring and Modeling conference}, Avignon, entitled: \textit{Perspectives for a more integrated use of satellite remote sensing in the MARS crop yield forecasting system} \\
-
-\years{\raggedleft11/12/2013} Talk at the American Geophysical Union Fall meeting, San Francisco, entitled: \textit{Identifying crop specific signals for global agricultural monitoring based on multi-angular MODIS reflectance time series}
-
-% Climate impacts conf?
 
 %------------------------------------------------
 
@@ -342,70 +482,23 @@ Supervisor: Pierre Defourny\\
 %	TEACHING SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Teaching}
+%\section*{Teaching}
 
-\years{\raggedleft2015} Lecturer at the \href{http://seom.esa.int/landtraining2015/page_home.php}{6th Advanced Training Course in Land Remote Sensing} summer school organized by the European Space Agency (ESA) in Bucarest, Romania. Material for both \href{http://seom.esa.int/landtraining2015/files/Day_4/D4T1b_LTC2015_Duveiller.pdf}{theoretical} and \href{http://seom.esa.int/landtraining2015/files/Day_4/D4P1b_LTC2015_Duveiller.pdf}{practical} sessions available online.\\
-
-\years{\raggedleft2013} Lecturer at the \href{https://earth.esa.int/web/guest/landtrainingcourse2013}{4th Advanced Training Course in Land Remote Sensing} summer school organized by the European Space Agency (ESA) in Athens, Greece. Video of the theoretical session available \href{http://www.esa.int/spaceinvideos/Videos/2013/07/Agriculture}{online}.\\
-
-\years{\raggedleft2013} Organisation of an international workshop held in March 2013 in Buenos Aires, Argentina, on crop modelling tools for the JRC in the framework of the EUROCLIMA project funded by EU DG-DEVCO\\
-
-\years{\raggedleft2006-2010} Organisation of seminars within my research group while working at UCL, Belgium.
-
-%------------------------------------------------
-
-\section*{Co-supervision or evaluation of PhD theses}
-
-\textbf{Alzira G. Ramos} - proposal submitted in July for PhD with \href{http://cerena.ist.utl.pt/}{CENECA}, Instituto Superior Técnico, Universidade de Lisboa, entitled: \textit{Modelling vegetation and soil spatial patterns over time for predicting land degradation in transition areas based on geostatistics.}\\
-
-\textbf{Sophia Walther} - ongoing thesis at Helmholtz-Centre Potsdam, GFZ German Research Centre, \href{http://www.gfz-potsdam.de/en/section/remote-sensing/topics/global-monitoring-of-vegetation-fluorescence-globfluo/}{GlobFluo group}. Tentative dissertation title : \textit{Exploiting remotely-sensed chlorophyll fluorescence data for the assessment of terrestrial vegetation dynamics and carbon cycle research}\\
-
-\textbf{Yetkin Ozum Durgun} - finishing a PhD at the \href{http://www.eed.ulg.ac.be/en/}{Universite de Liege}, Belgium. Tentative dissertation title: \textit{Advancing Agricultural Monitoring with Improved Yield Estimations Using SPOT VEGETATION Type Remotely Sensed Data}\\
-
-\textbf{Louise Leroux} - CIRAD \& Universite de Montpellier. Dissertation title: \textit{Moderate spatial resolution remote sensing for agricultural production dynamics monitoring in West Africa}
-
+%\years{\raggedleft2015} Lecturer at the \href{http://seom.esa.int/landtraining2015/page_home.php}{6th Advanced Training Course in Land Remote Sensing} summer school organized by the European Space Agency (ESA) in Bucarest, Romania. Material for both \href{http://seom.esa.int/landtraining2015/files/Day_4/D4T1b_LTC2015_Duveiller.pdf}{theoretical} and \href{http://seom.esa.int/landtraining2015/files/Day_4/D4P1b_LTC2015_Duveiller.pdf}{practical} sessions available online.\\
 
 
 %------------------------------------------------
 
-\section*{Service to the profession}
+%\section*{Service to the profession}
 
-Member of the Scientific committee for the ``Remote Sensing of Fluorescence, Photosynthesis and Vegetation Status'' conference that will be held on 17 - 19 January 2017 at ESA-ESRIN, Frascati, Italy. \href{http://www.flex2017.org/}{http://www.flex2017.org/}\\
+%Member of the Scientific committee for the ``Remote Sensing of Fluorescence, Photosynthesis and Vegetation Status'' conference that will be held on 17 - 19 January 2017 at ESA-ESRIN, Frascati, Italy. \href{http://www.flex2017.org/}{http://www.flex2017.org/}\\
 
-Reviewing for several journals including: \\
-Remote Sensing of Environment, Journal of Geophysical Research - Biogeosciences, IEEE Transactions on Geoscience and Remote Sensing, International Journal of Applied Earth Observation and Geoinformation, Geo:Geography and Environment, Scientific Reports and Journal of Plant Physiology.\\
-For more information see: \href{https://publons.com/author/1005902/gregory-duveiller#stats}{https://publons.com/author/1005902/gregory-duveiller}\\
+%Reviewing for several journals including: \\
+%Remote Sensing of Environment, Journal of Geophysical Research - Biogeosciences, IEEE Transactions on Geoscience and Remote Sensing, International Journal of Applied Earth Observation and Geoinformation, Geo:Geography and Environment, Scientific Reports and Journal of Plant Physiology.\\
 
-Member in a recruitment committee for a position of field technician at the \href{http://www.cra.wallonie.be/en}{Walloon Agricultural Research Center} (CRA-W).
 
-%----------------------------------------------------------------------------------------
-%	Personal skills SECTION
-%----------------------------------------------------------------------------------------
 
-\section*{Personal skills}
 
-\subsection*{Measurement equipment}
-Good command of GPS and instruments to measure plant canopy biophysical variables such as LAI (LAI-2000, Hemispherical Photography) acquired by realizing extensive field campaigns in the framework of PhD research.
-
-\subsection*{Computer skills}
-Programming: R, Matlab, some familiarity with python and C\#\\
-GIS: ESRI ArcMap, QGIS\\
-RS: ENVI\\
-Typesetting: \LaTeX, MS Word
-
-\subsection*{Languages}
-French - Native speaker\\
-English - Proficient user (C2)\\
-Spanish - Proficient user (C2)\\
-Italian - Proficient user (C1)\\
-Portuguese - Independent user (B2)
-
-\subsection*{Other skills and interests}
-- photography
-- gardening
-- trekking
-- cooking
-- drawing and painting
 
 \vfill{} % Whitespace before final footer
 
@@ -414,7 +507,7 @@ Portuguese - Independent user (B2)
 %----------------------------------------------------------------------------------------
 
 \begin{center}
-{\scriptsize Last updated: \today\- - \href{http://www.LaTeXTemplates.com}{http://www.LaTeXTemplates.com}} % Any final footer text such as a URL to the latest version of your CV, last updated date, compiled in XeTeX, etc
+{\scriptsize Last updated: \today\ } % Any final footer text such as a URL to the latest version of your CV, last updated date, compiled in XeTeX, etc
 \end{center}
 
 %----------------------------------------------------------------------------------------

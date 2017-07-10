@@ -579,11 +579,7 @@ FUNCTION {format.note}
 }
 
 FUNCTION {format.title}
-{ title empty$
-    { "" }
-    { title "t" change.case$
-    }
-  if$
+{ title
 }
 
 FUNCTION {output.bibitem.original}
